@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Events"
         TabbedViewControllerBuilder().instantiate(viewController: self)
         segmentControll.removeAllSegments()
         bindUI()

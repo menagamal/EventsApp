@@ -3,4 +3,54 @@
    uuid = "800AF753-06D4-4BB4-967F-9EC8D6A3F619"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFFCF3C7-AA6D-4401-B32F-4B726AD707CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EventsApp/Modules/EventsList/ViewModel/EventsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "fetchEvents()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BFFCF3C7-AA6D-4401-B32F-4B726AD707CB - acbddd98c7fdb2e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EventsApp.EventsViewModel.fetchEvents() -&gt; ()"
+                  moduleName = "EventsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/menagamal/Desktop/untitled%20folder/EventsApp/EventsApp/Modules/EventsList/ViewModel/EventsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  uuid = "BFFCF3C7-AA6D-4401-B32F-4B726AD707CB - 241ff44b667ea99f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (EventsApp.ApiResult&lt;Swift.Array&lt;EventsApp.EventModel&gt;, EventsApp.ApiErrorMessage&gt;) -&gt; () in EventsApp.EventsViewModel.fetchEvents() -&gt; ()"
+                  moduleName = "EventsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/menagamal/Desktop/untitled%20folder/EventsApp/EventsApp/Modules/EventsList/ViewModel/EventsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "122">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

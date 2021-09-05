@@ -9,4 +9,5 @@ target 'EventsApp' do
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'RxAlamofire'
+pod 'SDWebImage', '~> 4.0'
 end
