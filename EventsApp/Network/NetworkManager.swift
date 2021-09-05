@@ -9,7 +9,11 @@ import Foundation
 import RxAlamofire
 import RxSwift
 import Alamofire
-class NetworkManager {
+
+protocol NetworkSession {
+    func request<T: Codable>(target:NetworkCallsTarget, type:T.Type ) -> Observable<ApiResult<T, ApiErrorMessage>>
+}
+class NetworkManager: NetworkSession {
     
     lazy var session = Session.default
     

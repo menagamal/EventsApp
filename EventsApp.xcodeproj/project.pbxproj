@@ -14,7 +14,7 @@
 		D0BB757426E4AFD00000D4F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BB757226E4AFD00000D4F2 /* Main.storyboard */; };
 		D0BB757626E4AFD10000D4F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BB757526E4AFD10000D4F2 /* Assets.xcassets */; };
 		D0BB757926E4AFD10000D4F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BB757726E4AFD10000D4F2 /* LaunchScreen.storyboard */; };
-		D0BB758426E4B7220000D4F2 /* ViewControllerLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB758326E4B7220000D4F2 /* ViewControllerLoader.swift */; };
+		D0BB758426E4B7220000D4F2 /* TabbedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB758326E4B7220000D4F2 /* TabbedRouter.swift */; };
 		D0BB758926E4B9970000D4F2 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB758726E4B9970000D4F2 /* EventsListViewController.swift */; };
 		D0BB758A26E4B9970000D4F2 /* EventsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0BB758826E4B9970000D4F2 /* EventsListViewController.xib */; };
 		D0BB758E26E4BC340000D4F2 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB758D26E4BC340000D4F2 /* EventsViewModel.swift */; };
@@ -23,6 +23,7 @@
 		D0BB759926E4C3B60000D4F2 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB759826E4C3B60000D4F2 /* Observable+Extension.swift */; };
 		D0BB759C26E4C4190000D4F2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB759B26E4C4190000D4F2 /* NetworkManager.swift */; };
 		D0BB759F26E4CA3B0000D4F2 /* UISegmentControll+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB759E26E4CA3B0000D4F2 /* UISegmentControll+Extension.swift */; };
+		D0BB75A326E4F5470000D4F2 /* TabbedViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB75A226E4F5470000D4F2 /* TabbedViewControllerBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,7 @@
 		D0BB757526E4AFD10000D4F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0BB757826E4AFD10000D4F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0BB757A26E4AFD10000D4F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D0BB758326E4B7220000D4F2 /* ViewControllerLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLoader.swift; sourceTree = "<group>"; };
+		D0BB758326E4B7220000D4F2 /* TabbedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedRouter.swift; sourceTree = "<group>"; };
 		D0BB758726E4B9970000D4F2 /* EventsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewController.swift; sourceTree = "<group>"; };
 		D0BB758826E4B9970000D4F2 /* EventsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsListViewController.xib; sourceTree = "<group>"; };
 		D0BB758D26E4BC340000D4F2 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		D0BB759826E4C3B60000D4F2 /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		D0BB759B26E4C4190000D4F2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D0BB759E26E4CA3B0000D4F2 /* UISegmentControll+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentControll+Extension.swift"; sourceTree = "<group>"; };
+		D0BB75A226E4F5470000D4F2 /* TabbedViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewControllerBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,6 @@
 				D0BB759D26E4C9350000D4F2 /* Modules */,
 				D0BB759A26E4C4100000D4F2 /* Network */,
 				D0BB759726E4C39F0000D4F2 /* Extensions */,
-				D0BB758226E4B68C0000D4F2 /* Factory */,
 				D0BB756C26E4AFD00000D4F2 /* AppDelegate.swift */,
 				D0BB756E26E4AFD00000D4F2 /* SceneDelegate.swift */,
 				D0BB757526E4AFD10000D4F2 /* Assets.xcassets */,
@@ -114,19 +115,13 @@
 		D0BB758026E4B3F70000D4F2 /* TabbedModule */ = {
 			isa = PBXGroup;
 			children = (
+				D0BB75A126E4F3FB0000D4F2 /* Builder */,
+				D0BB75A026E4F1760000D4F2 /* Router */,
 				D0BB759226E4BE440000D4F2 /* ViewModel */,
 				D0BB759126E4BE3F0000D4F2 /* Model */,
 				D0BB759026E4BE360000D4F2 /* View */,
 			);
 			path = TabbedModule;
-			sourceTree = "<group>";
-		};
-		D0BB758226E4B68C0000D4F2 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				D0BB758326E4B7220000D4F2 /* ViewControllerLoader.swift */,
-			);
-			path = Factory;
 			sourceTree = "<group>";
 		};
 		D0BB758526E4B9260000D4F2 /* EventsList */ = {
@@ -220,6 +215,22 @@
 				D0BB758026E4B3F70000D4F2 /* TabbedModule */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		D0BB75A026E4F1760000D4F2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D0BB758326E4B7220000D4F2 /* TabbedRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D0BB75A126E4F3FB0000D4F2 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D0BB75A226E4F5470000D4F2 /* TabbedViewControllerBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,9 +356,10 @@
 				D0BB756D26E4AFD00000D4F2 /* AppDelegate.swift in Sources */,
 				D0BB758E26E4BC340000D4F2 /* EventsViewModel.swift in Sources */,
 				D0BB759426E4BF4D0000D4F2 /* CategoryModel.swift in Sources */,
+				D0BB75A326E4F5470000D4F2 /* TabbedViewControllerBuilder.swift in Sources */,
 				D0BB759926E4C3B60000D4F2 /* Observable+Extension.swift in Sources */,
 				D0BB756F26E4AFD00000D4F2 /* SceneDelegate.swift in Sources */,
-				D0BB758426E4B7220000D4F2 /* ViewControllerLoader.swift in Sources */,
+				D0BB758426E4B7220000D4F2 /* TabbedRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

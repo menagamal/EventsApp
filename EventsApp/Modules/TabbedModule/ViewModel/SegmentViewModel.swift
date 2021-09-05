@@ -10,12 +10,19 @@ import RxSwift
 import RxRelay
 class SegmentViewModel {
 
-    lazy var network = NetworkManager()
+    private var network: NetworkSession
 
     private var disposeBag = DisposeBag()
+ 
+    private var router: TabbedRouter
+    
+    private(set) var categoriesDataSource = BehaviorSubject<[CategoryModel]>(value: [CategoryModel]())
 
-    private(set) var categoriesDataSource = PublishSubject<[CategoryModel]>()
-
+    
+    init(router:TabbedRouter, network: NetworkSession ) {
+        self.router = router
+        self.network = network
+    }
     func loadCategories()  {
         network.request(target: .getCategories,type: [CategoryModel].self ).subscribe(onNext: { [weak self] result in
             switch result {
@@ -27,6 +34,16 @@ class SegmentViewModel {
             }
         }).disposed(by: disposeBag)
 
+    }
+    
+    func didSelectCategory(from index: Int) {
+        do {
+            let id = try categoriesDataSource.value()[index].id ?? ""
+            router.navigate(to: .eventsViewController(id: id))
+        } catch {
+            return
+        }
+   
     }
     
 }
