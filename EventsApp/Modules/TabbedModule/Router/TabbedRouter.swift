@@ -47,10 +47,13 @@ class TabbedRouter: BaseCoordinator {
     }
     
     func loadEvents(with id: String)  -> UIViewController {
+        guard let navigationController = rootViewController.navigationController else {
+            return UIViewController() 
+        }
         if let vc = loadedViewControllers[id] {
             return vc
         }
-        let vc = EventsBuilder().instantiate(id: id)
+        let vc = EventsBuilder().instantiate(id: id, navigationController: navigationController)
         loadedViewControllers[id] = vc
         return vc
     }

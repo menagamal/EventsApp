@@ -35,4 +35,13 @@ class EventsViewModel {
             }
         }).disposed(by: disposeBag)
     }
+    
+    func didSelectModel(index: Int){
+        let event = events.value[index]
+        router.navigate(to: .detailsViewController(dependancy: event))
+    }
+    
+    func type() -> EventModel.Type {
+        return EventModel.self
+    }
 }

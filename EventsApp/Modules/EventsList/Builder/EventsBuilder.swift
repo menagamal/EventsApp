@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 class EventsBuilder {
-    func instantiate(id: String) -> EventsListViewController {
+    func instantiate(id: String, navigationController: UINavigationController) -> EventsListViewController {
         let viewController: EventsListViewController = UIViewController.instanceXib()
-        let router = EventsListRouter(rootViewController: viewController)
+        let router = EventsListRouter(rootViewController: navigationController)
         let viewModel = EventsViewModel(router: router, network: NetworkManager(), id: id)
         viewController.viewModel = viewModel
         return viewController

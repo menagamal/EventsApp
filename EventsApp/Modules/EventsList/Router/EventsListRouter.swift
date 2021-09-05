@@ -12,19 +12,19 @@ class EventsListRouter: BaseCoordinator {
     
 
     enum Destination {
-        case detailsViewController
+        case detailsViewController(dependancy: EventModel)
     }
     
     var rootViewController: UIViewController
     
-    init(rootViewController: UIViewController) {
+    init(rootViewController: UINavigationController) {
         self.rootViewController = rootViewController
     }
     
     func makeViewController(for destination: Destination) -> UIViewController {
         switch destination {
-        case .detailsViewController:
-            return UIViewController()
+        case .detailsViewController( let model):
+            return DetailsBuilder().instantiate(model: model)
         }
     }
     func navigate(to destination: EventsListRouter.Destination) {

@@ -9,13 +9,13 @@ import UIKit
 import RxCocoa
 import RxSwift
 class EventsListViewController: UIViewController {
-
+    
     @IBOutlet weak var eventsTableView: UITableView!
-
+    
     private let disposeBag = DisposeBag()
     
     var viewModel: EventsViewModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTable()
@@ -37,6 +37,11 @@ class EventsListViewController: UIViewController {
                     .items(cellIdentifier: "EventTableViewCell", cellType: EventTableViewCell.self)) { _, event, cell in
                 cell.configure(with: event)
             }.disposed(by: disposeBag)
-            
+        
+        eventsTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                self?.viewModel?.didSelectModel(index: indexPath.row)
+            }).disposed(by: disposeBag)
+        
     }
 }

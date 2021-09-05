@@ -13,6 +13,7 @@ import Alamofire
 protocol NetworkSession {
     func request<T: Codable>(target:NetworkCallsTarget, type:T.Type ) -> Observable<ApiResult<T, ApiErrorMessage>>
 }
+
 class NetworkManager: NetworkSession {
     
     lazy var session = Session.default
