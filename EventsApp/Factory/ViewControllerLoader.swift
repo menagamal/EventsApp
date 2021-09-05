@@ -5,6 +5,7 @@
 //  Created by Mena Gamal on 05/09/2021.
 //
 
+// MARK: Factory 
 import Foundation
 import UIKit
 
@@ -26,6 +27,6 @@ class ViewControllerLoader: ViewControllerFactory {
         }
         let vc = UIViewController()
         loadedViewControllers[category] = vc
-        return vc 
+        return vc
     }
 }
