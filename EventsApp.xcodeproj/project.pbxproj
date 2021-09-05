@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3015E771F0442DC531C505F1 /* Pods_EventsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E98B34A041A0A2D8B61276 /* Pods_EventsApp.framework */; };
 		D0BB756D26E4AFD00000D4F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB756C26E4AFD00000D4F2 /* AppDelegate.swift */; };
 		D0BB756F26E4AFD00000D4F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB756E26E4AFD00000D4F2 /* SceneDelegate.swift */; };
 		D0BB757126E4AFD00000D4F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB757026E4AFD00000D4F2 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B8457B06CFFF14C70220020 /* Pods-EventsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.debug.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		55E98B34A041A0A2D8B61276 /* Pods_EventsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		980AD552C20A4E9FEC9F91E8 /* Pods-EventsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.release.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.release.xcconfig"; sourceTree = "<group>"; };
 		D0BB756926E4AFD00000D4F2 /* EventsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BB756C26E4AFD00000D4F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0BB756E26E4AFD00000D4F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3015E771F0442DC531C505F1 /* Pods_EventsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CBC0F99B02625E8FCCE68F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B8457B06CFFF14C70220020 /* Pods-EventsApp.debug.xcconfig */,
+				980AD552C20A4E9FEC9F91E8 /* Pods-EventsApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CCCBE2A99D97BC1E009C8B78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55E98B34A041A0A2D8B61276 /* Pods_EventsApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0BB756026E4AFD00000D4F2 = {
 			isa = PBXGroup;
 			children = (
 				D0BB756B26E4AFD00000D4F2 /* EventsApp */,
 				D0BB756A26E4AFD00000D4F2 /* Products */,
+				9CBC0F99B02625E8FCCE68F2 /* Pods */,
+				CCCBE2A99D97BC1E009C8B78 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0BB757D26E4AFD10000D4F2 /* Build configuration list for PBXNativeTarget "EventsApp" */;
 			buildPhases = (
+				3BA19AE8075A855231E6973C /* [CP] Check Pods Manifest.lock */,
 				D0BB756526E4AFD00000D4F2 /* Sources */,
 				D0BB756626E4AFD00000D4F2 /* Frameworks */,
 				D0BB756726E4AFD00000D4F2 /* Resources */,
+				E1A4899B82C83F86EBF1264F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BA19AE8075A855231E6973C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EventsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1A4899B82C83F86EBF1264F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventsApp/Pods-EventsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0BB756526E4AFD00000D4F2 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		D0BB757E26E4AFD10000D4F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B8457B06CFFF14C70220020 /* Pods-EventsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +371,7 @@
 		};
 		D0BB757F26E4AFD10000D4F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 980AD552C20A4E9FEC9F91E8 /* Pods-EventsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
