@@ -14,6 +14,7 @@
 		D0BB757426E4AFD00000D4F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BB757226E4AFD00000D4F2 /* Main.storyboard */; };
 		D0BB757626E4AFD10000D4F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BB757526E4AFD10000D4F2 /* Assets.xcassets */; };
 		D0BB757926E4AFD10000D4F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BB757726E4AFD10000D4F2 /* LaunchScreen.storyboard */; };
+		D0BB758426E4B7220000D4F2 /* ViewControllerLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB758326E4B7220000D4F2 /* ViewControllerLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D0BB757526E4AFD10000D4F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0BB757826E4AFD10000D4F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0BB757A26E4AFD10000D4F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0BB758326E4B7220000D4F2 /* ViewControllerLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		D0BB756B26E4AFD00000D4F2 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				D0BB758226E4B68C0000D4F2 /* Factory */,
 				D0BB758026E4B3F70000D4F2 /* TabbedModule */,
 				D0BB756C26E4AFD00000D4F2 /* AppDelegate.swift */,
 				D0BB756E26E4AFD00000D4F2 /* SceneDelegate.swift */,
@@ -97,6 +100,14 @@
 				D0BB757026E4AFD00000D4F2 /* ViewController.swift */,
 			);
 			path = TabbedModule;
+			sourceTree = "<group>";
+		};
+		D0BB758226E4B68C0000D4F2 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D0BB758326E4B7220000D4F2 /* ViewControllerLoader.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +227,7 @@
 				D0BB757126E4AFD00000D4F2 /* ViewController.swift in Sources */,
 				D0BB756D26E4AFD00000D4F2 /* AppDelegate.swift in Sources */,
 				D0BB756F26E4AFD00000D4F2 /* SceneDelegate.swift in Sources */,
+				D0BB758426E4B7220000D4F2 /* ViewControllerLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
