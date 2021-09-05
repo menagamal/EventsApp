@@ -17,15 +17,25 @@ class ViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private lazy var loader = ViewControllerLoader()
+    private lazy var viewModel = SegmentViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        segmentControll.removeAllSegments()
         bindUI()
+        viewModel.loadCategories()
     }
     
     private func bindUI() {
+        
         segmentControll.rx.selectedSegmentIndex.subscribe(onNext: { index in
-            // replace View controllers
+            //Replace The View Controllers
+        }).disposed(by: disposeBag)
+    
+        viewModel.categoriesDataSource.subscribe(onNext: { [weak self] value in
+            let strs = value.map{ $0.name }.compactMap{ $0 }
+            self?.segmentControll.replaceSegments(segments: strs)
+            self?.segmentControll.selectedSegmentIndex = 0
         }).disposed(by: disposeBag)
     }
     

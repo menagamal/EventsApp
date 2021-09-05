@@ -8,4 +8,5 @@ target 'EventsApp' do
   # Pods for EventsApp
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'RxAlamofire'
 end
