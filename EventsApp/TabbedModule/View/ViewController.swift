@@ -16,17 +16,18 @@ class ViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private lazy var loader = ViewControllerLoader()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindUI()
     }
     
-    
     private func bindUI() {
         segmentControll.rx.selectedSegmentIndex.subscribe(onNext: { index in
             // replace View controllers
-            
         }).disposed(by: disposeBag)
     }
+    
 }
 

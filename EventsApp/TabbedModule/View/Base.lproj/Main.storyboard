@@ -81,6 +81,7 @@
                     <view key="view" contentMode="scaleToFill" id="QVd-x6-MFQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="730"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="17I-2C-0gP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
