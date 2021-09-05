@@ -28,7 +28,7 @@
                                 </segments>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fN-Of-KKe">
-                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="734"/>
                                 <connections>
                                     <segue destination="uk1-Sr-AAu" kind="embed" id="i0F-hG-iDh"/>
                                 </connections>
@@ -42,7 +42,7 @@
                             <constraint firstItem="rNs-UZ-mZw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hzb-5n-Je6"/>
                             <constraint firstItem="8fN-Of-KKe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JYT-V1-SUG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rNs-UZ-mZw" secondAttribute="trailing" id="Jhj-Cn-04u"/>
-                            <constraint firstItem="8fN-Of-KKe" firstAttribute="top" secondItem="rNs-UZ-mZw" secondAttribute="bottom" constant="4" id="NmW-oM-t3S"/>
+                            <constraint firstItem="8fN-Of-KKe" firstAttribute="top" secondItem="rNs-UZ-mZw" secondAttribute="bottom" id="NmW-oM-t3S"/>
                             <constraint firstItem="rNs-UZ-mZw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yTd-FK-JaJ"/>
                         </constraints>
                     </view>
@@ -79,7 +79,7 @@
             <objects>
                 <viewController id="uk1-Sr-AAu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QVd-x6-MFQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="730"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="17I-2C-0gP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQy-FA-KYA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="756"/>
+            <point key="canvasLocation" x="913" y="801"/>
         </scene>
     </scenes>
     <resources>

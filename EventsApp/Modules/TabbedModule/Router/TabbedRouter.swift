@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-
-
 protocol BaseCoordinator {
     associatedtype Destination
     var rootViewController: UIViewController { get set }
@@ -48,11 +46,12 @@ class TabbedRouter: BaseCoordinator {
         rootViewController.present(viewController, animated: true)
     }
     
-}
-
-private extension TabbedRouter {
-    
     func loadEvents(with id: String)  -> UIViewController {
-        return UIViewController()
+        if let vc = loadedViewControllers[id] {
+            return vc
+        }
+        let vc = EventsBuilder().instantiate(id: id)
+        loadedViewControllers[id] = vc
+        return vc
     }
 }

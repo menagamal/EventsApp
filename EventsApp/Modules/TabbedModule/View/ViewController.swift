@@ -9,7 +9,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 class ViewController: UIViewController {
-
+    
     // MARK: Outlets
     @IBOutlet weak var segmentControll: UISegmentedControl!
     @IBOutlet weak var containerView: UIView!
@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     var viewModel: SegmentViewModel?
+    
+    var childViewController: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +29,40 @@ class ViewController: UIViewController {
     }
     
     private func bindUI() {
-        
+
         segmentControll.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] index in
-            //Replace The View Controllers
-            
+            if let vc = self?.viewModel?.didSelectCategory(from: index) {
+                self?.addViewController(viewController: vc)
+            }
         }).disposed(by: disposeBag)
-    
+
         viewModel?.categoriesDataSource.subscribe(onNext: { [weak self] value in
-            let strs = value.map{ $0.name }.compactMap{ $0 }
-            self?.segmentControll.replaceSegments(segments: strs)
-            self?.segmentControll.selectedSegmentIndex = 0
+            if !value.isEmpty {
+                let strs = value.map{ $0.name }.compactMap{ $0 }
+                self?.segmentControll.replaceSegments(segments: strs)
+                self?.segmentControll.selectedSegmentIndex = 1
+                if let vc = self?.viewModel?.didSelectCategory(from: 1) {
+                    self?.addViewController(viewController: vc)
+                }
+            }
         }).disposed(by: disposeBag)
     }
     
+    func addViewController(viewController: UIViewController)  {
+
+        if let vc = childViewController {
+            vc.willMove(toParent: nil)
+            vc.view.removeFromSuperview()
+            vc.removeFromParent()
+        }
+
+        self.addChild(viewController)
+        viewController.view.frame = containerView.bounds
+        self.containerView.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        childViewController = viewController
+    }
+
 }
 

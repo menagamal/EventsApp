@@ -31,6 +31,7 @@ class NetworkManager: NetworkSession {
 enum NetworkCallsTarget {
     
     case getCategories
+    case fetchEvents(id:String)
     
     var baseUrl: String {
         return "http://private-7466b-eventtuschanllengeapis.apiary-mock.com/"
@@ -40,11 +41,13 @@ enum NetworkCallsTarget {
         switch self {
         case .getCategories:
             return "eventtypes"
+        case .fetchEvents(let id):
+            return "events?event_type=\(id)"
         }
     }
     var method: HTTPMethod  {
         switch self {
-        case .getCategories:
+        case .getCategories, .fetchEvents:
             return .get
         }
     }

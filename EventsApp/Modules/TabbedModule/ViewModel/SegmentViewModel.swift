@@ -23,6 +23,7 @@ class SegmentViewModel {
         self.router = router
         self.network = network
     }
+
     func loadCategories()  {
         network.request(target: .getCategories,type: [CategoryModel].self ).subscribe(onNext: { [weak self] result in
             switch result {
@@ -36,14 +37,17 @@ class SegmentViewModel {
 
     }
     
-    func didSelectCategory(from index: Int) {
-        do {
-            let id = try categoriesDataSource.value()[index].id ?? ""
-            router.navigate(to: .eventsViewController(id: id))
-        } catch {
-            return
+    func didSelectCategory(from index: Int) -> UIViewController? {
+        if index > -1 {
+            do {
+                let id = try categoriesDataSource.value()[index].id ?? ""
+                return router.loadEvents(with: id)
+            } catch {
+                return nil
+            }
+        } else {
+            return nil
         }
-   
     }
     
 }

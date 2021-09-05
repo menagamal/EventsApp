@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3015E771F0442DC531C505F1 /* Pods_EventsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E98B34A041A0A2D8B61276 /* Pods_EventsApp.framework */; };
+		D0A18FF926E516BF002CBA31 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A18FF826E516BF002CBA31 /* UIViewController+Extension.swift */; };
+		D0A1900026E51ED2002CBA31 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A18FFF26E51ED2002CBA31 /* EventModel.swift */; };
+		D0A1900226E51F60002CBA31 /* EventsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1900126E51F60002CBA31 /* EventsBuilder.swift */; };
+		D0A1900526E51F83002CBA31 /* EventsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1900426E51F83002CBA31 /* EventsListRouter.swift */; };
 		D0BB756D26E4AFD00000D4F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB756C26E4AFD00000D4F2 /* AppDelegate.swift */; };
 		D0BB756F26E4AFD00000D4F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB756E26E4AFD00000D4F2 /* SceneDelegate.swift */; };
 		D0BB757126E4AFD00000D4F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB757026E4AFD00000D4F2 /* ViewController.swift */; };
@@ -30,6 +34,10 @@
 		0B8457B06CFFF14C70220020 /* Pods-EventsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.debug.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		55E98B34A041A0A2D8B61276 /* Pods_EventsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		980AD552C20A4E9FEC9F91E8 /* Pods-EventsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventsApp.release.xcconfig"; path = "Target Support Files/Pods-EventsApp/Pods-EventsApp.release.xcconfig"; sourceTree = "<group>"; };
+		D0A18FF826E516BF002CBA31 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		D0A18FFF26E51ED2002CBA31 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		D0A1900126E51F60002CBA31 /* EventsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsBuilder.swift; sourceTree = "<group>"; };
+		D0A1900426E51F83002CBA31 /* EventsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListRouter.swift; sourceTree = "<group>"; };
 		D0BB756926E4AFD00000D4F2 /* EventsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BB756C26E4AFD00000D4F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0BB756E26E4AFD00000D4F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +85,22 @@
 				55E98B34A041A0A2D8B61276 /* Pods_EventsApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0A18FFA26E51E98002CBA31 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D0A1900126E51F60002CBA31 /* EventsBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		D0A1900326E51F77002CBA31 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D0A1900426E51F83002CBA31 /* EventsListRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		D0BB756026E4AFD00000D4F2 = {
@@ -127,6 +151,8 @@
 		D0BB758526E4B9260000D4F2 /* EventsList */ = {
 			isa = PBXGroup;
 			children = (
+				D0A1900326E51F77002CBA31 /* Router */,
+				D0A18FFA26E51E98002CBA31 /* Builder */,
 				D0BB758C26E4BBFD0000D4F2 /* ViewModel */,
 				D0BB758B26E4BBF80000D4F2 /* Models */,
 				D0BB758626E4B9340000D4F2 /* View */,
@@ -147,6 +173,7 @@
 		D0BB758B26E4BBF80000D4F2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D0A18FFF26E51ED2002CBA31 /* EventModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +223,7 @@
 			children = (
 				D0BB759826E4C3B60000D4F2 /* Observable+Extension.swift */,
 				D0BB759E26E4CA3B0000D4F2 /* UISegmentControll+Extension.swift */,
+				D0A18FF826E516BF002CBA31 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,8 +377,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0BB759F26E4CA3B0000D4F2 /* UISegmentControll+Extension.swift in Sources */,
+				D0A18FF926E516BF002CBA31 /* UIViewController+Extension.swift in Sources */,
 				D0BB759626E4BF7B0000D4F2 /* SegmentViewModel.swift in Sources */,
+				D0A1900526E51F83002CBA31 /* EventsListRouter.swift in Sources */,
 				D0BB757126E4AFD00000D4F2 /* ViewController.swift in Sources */,
+				D0A1900026E51ED2002CBA31 /* EventModel.swift in Sources */,
 				D0BB759C26E4C4190000D4F2 /* NetworkManager.swift in Sources */,
 				D0BB758926E4B9970000D4F2 /* EventsListViewController.swift in Sources */,
 				D0BB756D26E4AFD00000D4F2 /* AppDelegate.swift in Sources */,
@@ -360,6 +391,7 @@
 				D0BB759926E4C3B60000D4F2 /* Observable+Extension.swift in Sources */,
 				D0BB756F26E4AFD00000D4F2 /* SceneDelegate.swift in Sources */,
 				D0BB758426E4B7220000D4F2 /* TabbedRouter.swift in Sources */,
+				D0A1900226E51F60002CBA31 /* EventsBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
