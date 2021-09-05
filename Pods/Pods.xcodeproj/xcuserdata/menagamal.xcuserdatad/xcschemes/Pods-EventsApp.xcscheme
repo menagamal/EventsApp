@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D24C8A5EC4A862E53C884A9610743E3"
-               BuildableName = "Pods-EventsApp.framework"
+               BuildableName = "Pods_EventsApp.framework"
                BlueprintName = "Pods-EventsApp"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,7 +48,6 @@
 				0B8457B06CFFF14C70220020 /* Pods-EventsApp.debug.xcconfig */,
 				980AD552C20A4E9FEC9F91E8 /* Pods-EventsApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +80,23 @@
 		D0BB756B26E4AFD00000D4F2 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				D0BB758026E4B3F70000D4F2 /* TabbedModule */,
 				D0BB756C26E4AFD00000D4F2 /* AppDelegate.swift */,
 				D0BB756E26E4AFD00000D4F2 /* SceneDelegate.swift */,
-				D0BB757026E4AFD00000D4F2 /* ViewController.swift */,
-				D0BB757226E4AFD00000D4F2 /* Main.storyboard */,
 				D0BB757526E4AFD10000D4F2 /* Assets.xcassets */,
 				D0BB757726E4AFD10000D4F2 /* LaunchScreen.storyboard */,
 				D0BB757A26E4AFD10000D4F2 /* Info.plist */,
 			);
 			path = EventsApp;
+			sourceTree = "<group>";
+		};
+		D0BB758026E4B3F70000D4F2 /* TabbedModule */ = {
+			isa = PBXGroup;
+			children = (
+				D0BB757226E4AFD00000D4F2 /* Main.storyboard */,
+				D0BB757026E4AFD00000D4F2 /* ViewController.swift */,
+			);
+			path = TabbedModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
