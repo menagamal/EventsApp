@@ -18,14 +18,17 @@ class SegmentViewModel {
     
     private(set) var categoriesDataSource = BehaviorSubject<[CategoryModel]>(value: [CategoryModel]())
 
-    
+    var showLoadinIndicator = BehaviorSubject<Bool>(value: false)
+
     init(router:TabbedRouter, network: NetworkSession ) {
         self.router = router
         self.network = network
     }
 
     func loadCategories()  {
+        showLoadinIndicator.onNext(true)
         network.request(target: .getCategories,type: [CategoryModel].self ).subscribe(onNext: { [weak self] result in
+            self?.showLoadinIndicator.onNext(false)
             switch result {
             case .success(let value):
                 self?.categoriesDataSource.onNext(value)

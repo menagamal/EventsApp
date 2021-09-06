@@ -10,4 +10,6 @@ pod 'RxSwift'
 pod 'RxCocoa'
 pod 'RxAlamofire'
 pod 'SDWebImage', '~> 4.0'
+pod 'Toast-Swift'
+
 end

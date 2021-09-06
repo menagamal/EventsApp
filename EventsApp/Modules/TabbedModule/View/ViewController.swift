@@ -8,7 +8,8 @@
 import UIKit
 import RxCocoa
 import RxSwift
-class ViewController: UIViewController {
+
+class ViewController: BaseViewController {
     
     // MARK: Outlets
     @IBOutlet weak var segmentControll: UISegmentedControl!
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
         TabbedViewControllerBuilder().instantiate(viewController: self)
         segmentControll.removeAllSegments()
         bindUI()
+        
         viewModel?.loadCategories()
     }
     
@@ -47,6 +49,16 @@ class ViewController: UIViewController {
                 }
             }
         }).disposed(by: disposeBag)
+        
+        viewModel?.showLoadinIndicator.subscribe(onNext: { [weak self] value in
+            if value {
+                self?.showLoadingIndicator()
+            } else {
+                self?.hideLoadingIndicator()
+            }
+        }).disposed(by: disposeBag)
+        
+        
     }
     
     func addViewController(viewController: UIViewController)  {

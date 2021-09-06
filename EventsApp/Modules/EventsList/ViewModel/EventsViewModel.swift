@@ -18,6 +18,7 @@ class EventsViewModel {
     private var id: String
     
     var events: BehaviorRelay<[EventModel]> = BehaviorRelay(value: [EventModel]())
+    var showLoadinIndicator = BehaviorSubject<Bool>(value: false)
 
     init(router:EventsListRouter, network: NetworkSession, id:String ) {
         self.router = router
@@ -25,7 +26,9 @@ class EventsViewModel {
         self.network = network
     }
     func fetchEvents()  {
+        showLoadinIndicator.onNext(true)
         network.request(target: .fetchEvents(id: id), type: [EventModel].self).subscribe(onNext: { [weak self] result in
+            self?.showLoadinIndicator.onNext(false)
             switch result {
             case .success(let value):
                 self?.events.accept(value)
