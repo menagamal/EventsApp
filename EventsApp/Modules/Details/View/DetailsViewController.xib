@@ -124,7 +124,7 @@
                                         </view>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-v2-MRJ">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-v2-MRJ">
                                     <rect key="frame" x="170" y="48" width="74.5" height="72.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,6 +138,7 @@
                                 <constraint firstItem="qD0-8x-E3i" firstAttribute="centerX" secondItem="EzH-v2-MRJ" secondAttribute="centerX" id="C6x-vw-ZwO"/>
                                 <constraint firstItem="rha-uP-cjS" firstAttribute="top" secondItem="K4k-G7-M5u" secondAttribute="top" id="GTY-XC-34L"/>
                                 <constraint firstItem="xvt-Xx-bso" firstAttribute="top" secondItem="K4k-G7-M5u" secondAttribute="top" constant="32" id="Kmg-ui-mpo"/>
+                                <constraint firstItem="EzH-v2-MRJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="K4k-G7-M5u" secondAttribute="leading" constant="12" id="Mar-Jp-caN"/>
                                 <constraint firstAttribute="bottom" secondItem="nEe-eT-ieR" secondAttribute="bottom" constant="32" id="OQ7-sf-5wx"/>
                                 <constraint firstItem="rha-uP-cjS" firstAttribute="leading" secondItem="K4k-G7-M5u" secondAttribute="leading" id="R2w-5C-1R2"/>
                                 <constraint firstItem="nEe-eT-ieR" firstAttribute="top" secondItem="rha-uP-cjS" secondAttribute="bottom" constant="24" id="Sl1-DS-hXT"/>
@@ -148,6 +149,7 @@
                                 <constraint firstItem="qD0-8x-E3i" firstAttribute="top" secondItem="K4k-G7-M5u" secondAttribute="top" constant="124" id="hl9-GI-aFP"/>
                                 <constraint firstItem="rha-uP-cjS" firstAttribute="height" secondItem="K4k-G7-M5u" secondAttribute="height" multiplier="0.25" id="lFQ-8b-lO8"/>
                                 <constraint firstItem="nEe-eT-ieR" firstAttribute="leading" secondItem="K4k-G7-M5u" secondAttribute="leading" id="q1b-EW-Ou1"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EzH-v2-MRJ" secondAttribute="trailing" constant="12" id="xwB-YK-Ht7"/>
                             </constraints>
                         </view>
                     </subviews>
