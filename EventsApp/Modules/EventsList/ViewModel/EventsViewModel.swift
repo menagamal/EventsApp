@@ -17,7 +17,8 @@ class EventsViewModel {
     private var router: EventsListRouter
     private var id: String
     
-    var events: BehaviorRelay<[EventModel]> = BehaviorRelay(value: [EventModel]())
+    var events: PublishSubject<[EventModel]> = PublishSubject()
+    var error: PublishSubject<ApiErrorMessage> = PublishSubject()
     var showLoadinIndicator = BehaviorSubject<Bool>(value: false)
 
     init(router:EventsListRouter, network: NetworkSession, id:String ) {
@@ -31,16 +32,16 @@ class EventsViewModel {
             self?.showLoadinIndicator.onNext(false)
             switch result {
             case .success(let value):
-                self?.events.accept(value)
+                self?.events.onNext(value)
                 break
-            case .failure(_):
+            case .failure(let e):
+                self?.error.onNext(e)
                 break
             }
         }).disposed(by: disposeBag)
     }
     
-    func didSelectModel(index: Int){
-        let event = events.value[index]
+    func didSelectModel(event: EventModel){
         router.navigate(to: .detailsViewController(dependancy: event))
     }
     

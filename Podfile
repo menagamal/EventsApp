@@ -11,5 +11,8 @@ pod 'RxCocoa'
 pod 'RxAlamofire'
 pod 'SDWebImage', '~> 4.0'
 pod 'Toast-Swift'
-
+target 'EventsAppTests' do
+  inherit! :search_paths
+  # Pods for testing
+end
 end

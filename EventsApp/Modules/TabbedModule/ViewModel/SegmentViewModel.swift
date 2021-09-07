@@ -17,6 +17,7 @@ class SegmentViewModel {
     private var router: TabbedRouter
     
     private(set) var categoriesDataSource = BehaviorSubject<[CategoryModel]>(value: [CategoryModel]())
+    var error: PublishSubject<ApiErrorMessage> = PublishSubject()
 
     var showLoadinIndicator = BehaviorSubject<Bool>(value: false)
 
@@ -33,7 +34,8 @@ class SegmentViewModel {
             case .success(let value):
                 self?.categoriesDataSource.onNext(value)
                 break
-            case .failure(_):
+            case .failure(let error):
+                self?.error.onNext(error)
                 break
             }
         }).disposed(by: disposeBag)

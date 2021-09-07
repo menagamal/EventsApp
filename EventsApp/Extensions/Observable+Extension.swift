@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
-extension Observable where Element == (HTTPURLResponse, Data){
+public extension Observable where Element == (HTTPURLResponse, Data){
     func expectingObject<T : Codable>(ofType type: T.Type) -> Observable<ApiResult<T, ApiErrorMessage>>{
         return self.map{ (httpURLResponse, data) -> ApiResult<T, ApiErrorMessage> in
             switch httpURLResponse.statusCode{
@@ -24,12 +24,12 @@ extension Observable where Element == (HTTPURLResponse, Data){
 }
 
 
-enum ApiErrorMessage: Error {
+public enum ApiErrorMessage: Error {
     case failure
 }
 
 
-enum ApiResult<Value, Error>{
+public enum ApiResult<Value, Error>{
     case success(Value)
     case failure(Error)
 

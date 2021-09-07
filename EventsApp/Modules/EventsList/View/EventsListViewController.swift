@@ -38,9 +38,9 @@ class EventsListViewController: BaseViewController {
                 cell.configure(with: event)
             }.disposed(by: disposeBag)
         
-        eventsTableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                self?.viewModel?.didSelectModel(index: indexPath.row)
+        eventsTableView.rx.modelSelected(EventModel.self)
+            .subscribe(onNext: { [weak self] model in
+                self?.viewModel?.didSelectModel(event: model)
             }).disposed(by: disposeBag)
         
         
