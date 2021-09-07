@@ -59,6 +59,13 @@ class ViewController: BaseViewController {
         }).disposed(by: disposeBag)
         
         
+        viewModel?.error.subscribe(onNext: { [weak self] value in
+            DispatchQueue.main.async {
+                self?.display(message: value.message)
+            }
+        }).disposed(by: disposeBag)
+        
+        
     }
     
     func addViewController(viewController: UIViewController)  {

@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+
 class EventsListViewController: BaseViewController {
     
     @IBOutlet weak var eventsTableView: UITableView!
@@ -49,6 +50,12 @@ class EventsListViewController: BaseViewController {
                 self?.showLoadingIndicator()
             } else {
                 self?.hideLoadingIndicator()
+            }
+        }).disposed(by: disposeBag)
+        
+        viewModel.error.subscribe(onNext: { [weak self] value in
+            DispatchQueue.main.async {
+                self?.display(message: value.message)
             }
         }).disposed(by: disposeBag)
         

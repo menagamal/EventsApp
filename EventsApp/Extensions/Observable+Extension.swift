@@ -26,6 +26,9 @@ public extension Observable where Element == (HTTPURLResponse, Data){
 
 public enum ApiErrorMessage: Error {
     case failure
+    var message: String {
+        return "Oops Something gone wrong, Please try again"
+    }
 }
 
 
